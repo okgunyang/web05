@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+	<select id="memberList" resultType="com.kktshop.dto.MemberDTO">
+		select * from member
+	</select>
+
+	<select id="memberCount" resultType="integer">
+		select count(*) from member
+	</select>
+	
+	<select id="getMember" resultType="com.kktshop.dto.MemberDTO">
+		select * from member where id=#{id}
+	</select>
+	
+	<select id="loginMember" resultType="com.kktshop.dto.MemberDTO">
+		select * from member where id=#{id}
+	</select>
+	
+	<select id="checkExistMember" resultType="integer">
+		select count(*) from member where id=#{id}
+	</select>
+	
+	<select id="emailCheck" resultType="com.kktshop.dto.MemberDTO">
+		select * from member where email=#{email}
+	</select>
+
+	<select id="phoneCheck" resultType="com.kktshop.dto.MemberDTO">
+		select * from member where phone=#{phone}
+	</select>
+	
+	<insert id="joinMember">
+	insert into member(id, pwd, uname, birth, phone, email) values 
+	(#{id}, #{pwd}, #{uname}, #{birth}, #{phone}, #{email})
+	</insert>
+	
+	<delete id="deleteMember">
+		delete from member where id=#{id}
+	</delete>	
+	
+	<update id="updateMember">
+		update member set pwd=#{pwd}, uname=#{uname}, birth=#{birth}, 
+		phone=#{phone}, email=#{email} 
+		where id=#{id}
+	</update>
+</mapper>

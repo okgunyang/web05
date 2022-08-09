@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sales">
+	<select id="salesAllList" resultType="com.kktshop.dto.SalesDTO">
+	select * from sales
+	</select>
+
+	<select id="salesList" resultType="com.kktshop.dto.SalesDTO">
+	select * from sales where userid=#{userid}
+	</select>
+	
+	<select id="salesRead" resultType="com.kktshop.dto.SalesDTO">
+	select * from sales where ono=#{ono}
+	</select>
+	
+	<select id="salesCount" resultType="integer">
+	select count(*) from sales where userid=#{userid}
+	</select>
+	
+	<insert id="addSales">
+	insert into sales(paytype, payplace, payno, money, sdate, gno, amount, userid, rname, tel, addr1, addr2, postcode, memo) values 
+ 	(#{paytype}, #{payplace}, #{payno}, #{money}, (current_date), #{gno}, #{amount}, #{userid}, #{rname}, #{tel}, #{addr1}, #{addr2}, #{postcode}, #{memo})
+	</insert>
+	
+	<update id="salesGoodsUpdate">
+	update goods set gstock = gstock - #{gstock} where gnum = #{gnum}
+	</update>
+
+	<update id="returnGoodsUpdate">
+	update goods set gstock = gstock + #{gstock} where gnum = #{gnum}
+	</update>
+	
+	<delete id="salesCartUpdate">
+	delete from cart where bno = #{bno}
+	</delete>
+	
+	<update id="addShipping">
+	update sales set transno=#{transno}, transco=#{transco}, rstate=#{rstate}, rdate=#{rdate} where ono=#{ono}
+	</update>
+	
+	<delete id="deleteSales">
+	delete from sales where ono=#{ono} and userid=#{userid}
+	</delete>	
+	
+	<update id="updateSales">
+	update sales set rname=#{rname}, tel=#{tel}, addr1=#{addr1}, addr2=#{addr2}, postcode=#{postcode} where ono=#{ono} and userid=#{userid}	
+	</update>
+	
+</mapper>

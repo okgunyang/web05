@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="qna">
+	<!--  목록 불러오기 -->
+	<select id="qnaList" resultType="com.kktshop.dto.QnaDTO" >
+		select * from qna <include refid="search" /> order by qroot desc, qno asc, qstep asc, qwritedate desc
+	</select>
+	
+	<select id="qnaAllList" resultType="com.kktshop.dto.QnaDTO" >
+		select * from qna order by qroot desc, qno asc, qstep asc, qwritedate desc
+	</select>
+	
+	<select id="qnaCount" resultType="integer" >
+		select count(*) from qna <include refid="search" />
+	</select>
+	
+	<!-- 검색 조건 지정 -->
+	<sql id="search">
+		<if test="search=='qtitle' or search=='qcontent'" >
+			where #{search} like concat('%',#{keyword},'%') 
+		</if>
+		<if test="search=='qwriter'">
+			where <include refid="writer"/>
+		</if>
+		<if test="search=='all'">
+			where qtitle like concat('%',#{keyword},'%') OR	qcontent like '%' concat('%',#{keyword},'%') OR <include refid="writer"/> 
+		</if>
+	</sql>
+	
+	<!-- 작성자 가져오기 -->
+	<sql id="writer">
+		qwriter in (select id from member where uname like concat('%',#{keyword},'%') )
+	</sql>
+	
+	<!-- 글 상세보기 -->
+	<select id="qnaRead" resultType="com.kktshop.dto.QnaDTO" >
+		select * from qna <include refid="condi"/>
+	</select>
+	
+	<!-- 답변 글 상세보기 -->
+	<select id="replyRead" resultType="com.kktshop.dto.QnaDTO" >
+		select * from qna where qno=#{qno }
+	</select>
+	
+	<!-- 질문하기 -->
+	<insert id="qnaWrite">
+		insert into qna (qtitle, qcontent, qwriter, qwritedate, qreadcnt, qstep, qindent) 
+		values (#{qtitle }, #{qcontent }, #{qwriter }, (current_date), 0, 0, 0)
+	</insert>
+
+	<select id="latestQna" resultType="integer">
+		select qno from qna order by qno desc LIMIT 1 
+	</select>
+
+	<!-- 질문하기에 깊이 넣기 -->
+	<insert id="qnaWriteUpdate">
+		update qna set qroot=#{qno} where qno=#{qno}
+	</insert>
+
+	<!-- 답변하기 -->
+	<insert id="replyWrite">
+		insert into qna (qtitle, qcontent, qwriter, qwritedate, qreadcnt, qroot, qstep, qindent) 
+		values (#{qtitle }, #{qcontent }, #{qwriter }, (current_date), 0, #{qroot }, 1, 14)
+	</insert>
+	
+	<!-- 글 수정 -->
+	<update id="qnaUpdate">
+		update qna set qtitle=#{qtitle }, qcontent=#{qcontent }, qwriter=#{qwriter}   
+		where qno=#{qno }
+	</update>
+	
+	<!-- 답글 수정 -->
+	<update id="replyUpdate">
+		update qna set qtitle=#{qtitle }, qcontent=#{qcontent }, qwriter=#{qwriter}   
+		where qno=#{qno }
+	</update>
+	
+	<!-- 글 삭제 -->
+	<delete id="qnaDelete">
+		delete from qna where qroot=#{qno }
+	</delete>
+	
+	<!-- 답글 삭제 -->
+	<delete id="replyDelete">
+		delete from qna where qno=#{qno }
+	</delete>
+	
+	<sql id="condi">
+		where qno=#{qno } 
+	</sql>
+</mapper>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="home">
+	<select id="navbarList" resultType="com.kktshop.dto.NavbarDTO">
+		select * from navbar where navparam not like 'Z%' order by navparam asc, dept asc
+	</select>
+			
+	<select id="cateList" resultType="com.kktshop.dto.NavbarDTO">
+		select * from navbar where navparam like concat(#{navparam},'%') order by navparam asc
+	</select>
+	
+	<select id="navCount" resultType="integer">
+		select count(*) from navbar where navparam=#{navparam}
+	</select>
+	
+	<insert id="addCate">
+		insert into navbar(dept, navname, navparam, navurl) values (#{dept}, #{navname}, #{navparam}, #{navurl})
+	</insert>
+
+	<update id="updateCate">
+		update notice set dept=#{dept}, navname=#{navname}, navparam=#{navparam}, navurl=#{navurl} where idx=#{idx}
+	</update>
+
+	<delete id="delCate">
+		delete from navbar where idx=#{idx}
+	</delete>
+			
+	<select id="latestNotice" resultType="com.kktshop.dto.NoticeDTO">
+		select * from notice order by regdate desc limit 5
+	</select>
+	
+	<select id="latestGoods" resultType="com.kktshop.dto.GoodsDTO">
+		select * from goods order by regdate desc limit 5
+	</select>
+	
+	<!-- 가장 많이 팔린 상품 = 베스트 5 -> 반드시 팔린 상품 데이터가 6건 이상 존재해야함 -->
+	<select id="bestSalesGoods" resultType="com.kktshop.dto.GoodsDTO">
+		select * from goods where gnum in (select gno from (select gno, count(*) as cnt from sales group by gno order by cnt desc limit 5))
+	</select>	
+	
+	<update id="updateNotice">
+		update notice set title=#{title}, content=#{content}, regdate=now() where seq=#{seq}
+	</update>
+	
+	<update id="viewCountUp">
+		update notice set visited=visited+1 where seq=#{seq}
+	</update>
+</mapper>

@@ -1,0 +1,558 @@
+Found a 42 line (161 tokens) duplication in the following files: 
+Starting at line 11 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\CartDTO.java
+Starting at line 18 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\CartDetailDTO.java
+
+	public int getBno() {
+		return bno;
+	}
+	public void setBno(int bno) {
+		this.bno = bno;
+	}
+	public String getUserid() {
+		return userid;
+	}
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
+	public int getGno() {
+		return gno;
+	}
+	public void setGno(int gno) {
+		this.gno = gno;
+	}
+	public String getGcolor() {
+		return gcolor;
+	}
+	public void setGcolor(String gcolor) {
+		this.gcolor = gcolor;
+	}
+	public int getAmount() {
+		return amount;
+	}
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+	public String getGsize() {
+		return gsize;
+	}
+	public void setGsize(String gsize) {
+		this.gsize = gsize;
+	}
+	public String getBdate() {
+		return bdate;
+	}
+	public void setBdate(String bdate) {
+		this.bdate = bdate;
+	}
+=====================================================================
+Found a 11 line (87 tokens) duplication in the following files: 
+Starting at line 9 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dao\QnaDAO.java
+Starting at line 9 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\service\QnaService.java
+
+	public List<QnaDTO> questionRead(int qno) throws Exception;
+	public QnaDTO qnaRead(int qno) throws Exception;
+	public QnaDTO replyRead(int qno) throws Exception;
+	public int qnaCount() throws Exception;
+	public void addQuestion(QnaDTO qna) throws Exception;
+	public void addReply(QnaDTO qna) throws Exception;
+	public void updateQna(QnaDTO qna) throws Exception;
+	public void updateReply(QnaDTO qna) throws Exception;
+	public void deleteQuestion(QnaDTO qna) throws Exception;
+	public void deleteReply(QnaDTO qna) throws Exception;
+}
+=====================================================================
+Found a 18 line (87 tokens) duplication in the following files: 
+Starting at line 24 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\util\PageMaker.java
+Starting at line 43 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\util\PageMaker.java
+
+		this.curBlock = 1;
+		this.curPage = curPage;
+		if(curPage < 1) {
+			this.curPage = 1;
+		}
+		this.setTotPage(count);
+		this.setPageRange();
+		this.setTotBlock();
+		this.setBlockRange();
+		this.setNextBlock();
+		this.setPrevBlock();
+		this.setBnum();
+		this.setStartPost();
+		this.setTotPost(count);
+		this.setEndPost();
+	}
+	
+	public PageMaker(int count, int curPage, int PAGE_PER_POST) {
+=====================================================================
+Found a 18 line (77 tokens) duplication in the following files: 
+Starting at line 24 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\util\PageMaker.java
+Starting at line 43 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\util\PageMaker.java
+Starting at line 63 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\util\PageMaker.java
+
+		this.curBlock = 1;
+		this.curPage = curPage;
+		if(curPage < 1) {
+			this.curPage = 1;
+		}
+		this.setTotPage(count);
+		this.setPageRange();
+		this.setTotBlock();
+		this.setBlockRange();
+		this.setNextBlock();
+		this.setPrevBlock();
+		this.setBnum();
+		this.setStartPost();
+		this.setTotPost(count);
+		this.setEndPost();
+	}
+	
+	public PageMaker(int count, int curPage, int PAGE_PER_POST) {
+=====================================================================
+Found a 9 line (67 tokens) duplication in the following files: 
+Starting at line 8 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dao\NoticeDAO.java
+Starting at line 8 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\service\NoticeService.java
+
+public interface NoticeDAO {
+	public List<NoticeDTO> noticeList() throws Exception;
+	public List<NoticeDTO> noticePageList(PageMaker page) throws Exception;
+	public NoticeDTO noticeRead(int seq) throws Exception;
+	public int noticeCount() throws Exception;
+	public void addNotice(NoticeDTO notice) throws Exception; 
+	public void deleteNotice(NoticeDTO notice) throws Exception;
+	public void updateNotice(NoticeDTO notice) throws Exception;
+}
+=====================================================================
+Found a 9 line (64 tokens) duplication in the following files: 
+Starting at line 8 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dao\GoodsDAO.java
+Starting at line 8 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\service\GoodsService.java
+
+public interface GoodsDAO {
+	public List<GoodsDTO> goodsList() throws Exception;
+	public GoodsDTO getGoods(int gnum) throws Exception;
+	public int goodsCount() throws Exception;
+	public void addGoods(GoodsDTO goods) throws Exception;
+	public void deleteGoods(GoodsDTO goods) throws Exception;
+	public void updateGoods(GoodsDTO goods) throws Exception;
+	public void addCategory(CategoryDTO category) throws Exception;
+}
+=====================================================================
+Found a 8 line (57 tokens) duplication in the following files: 
+Starting at line 7 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dao\CartDAO.java
+Starting at line 7 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\service\CartService.java
+
+public interface CartDAO {
+	public List<CartDTO> cartList(String userid) throws Exception;
+	public CartDTO cartRead(CartDTO cart) throws Exception; 
+	public int cartCount() throws Exception;
+	public void addCart(CartDTO cart) throws Exception;
+	public void deleteCart(CartDTO cart) throws Exception;
+	public void updateCart(CartDTO cart) throws Exception;
+}
+=====================================================================
+Found a 7 line (51 tokens) duplication in the following files: 
+Starting at line 7 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dao\SalesDAO.java
+Starting at line 7 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\service\SalesService.java
+
+public interface SalesDAO {
+	public List<SalesDTO> salesList(String userid) throws Exception;
+	public SalesDTO salesRead(int ono) throws Exception;
+	public int salesCount(String userid) throws Exception;
+	public void addSales(SalesDTO sales) throws Exception;
+	public void addShipping(SalesDTO sales) throws Exception;
+	public void deleteSales(SalesDTO sales) throws Exception;
+=====================================================================
+Found a 20 line (50 tokens) duplication in the following files: 
+Starting at line 7 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dao\LatestDAOImpl.java
+Starting at line 7 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\service\LatestServiceImpl.java
+
+public class LatestDAOImpl implements LatestDAO {
+
+	@Override
+	public List<GoodsDTO> latestGoods() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<GoodsDTO> bestGoods() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<GoodsDTO> chuGoods() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}
+=====================================================================
+Found a 8 line (49 tokens) duplication in the following files: 
+Starting at line 24 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\controller\CartController.java
+Starting at line 24 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\controller\SalesController.java
+
+	@Autowired
+	HttpSession session;
+	
+	@RequestMapping(value="list.do", method = RequestMethod.GET)
+    public String noticeList(Model model) throws Exception {
+		MemberDTO user = (MemberDTO) session.getAttribute("member");
+		String userid = user.getId();
+		List<CartDTO> cartList = cartService.cartList(userid);
+=====================================================================
+Found a 7 line (48 tokens) duplication in the following files: 
+Starting at line 7 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dao\ReviewDAO.java
+Starting at line 7 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\service\ReviewService.java
+
+public interface ReviewDAO {
+	public List<ReviewDTO> reviewList(int gnum) throws Exception;
+	public int reviewCount() throws Exception;
+	public void addReview(ReviewDTO review) throws Exception;
+	public void updateReview(ReviewDTO review) throws Exception;
+	public void deleteReview(ReviewDTO review) throws Exception;
+}
+=====================================================================
+Found a 13 line (48 tokens) duplication in the following files: 
+Starting at line 9 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\DatabankDTO.java
+Starting at line 10 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\NoticeDTO.java
+
+	public int getSeq() {
+		return seq;
+	}
+	public void setSeq(int seq) {
+		this.seq = seq;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getFileurl() {
+=====================================================================
+Found a 14 line (48 tokens) duplication in the following files: 
+Starting at line 33 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\NoticeDTO.java
+Starting at line 40 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\ReviewDTO.java
+
+	}
+	public String getRegdate() {
+		return regdate;
+	}
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
+	}
+	public int getVisited() {
+		return visited;
+	}
+	public void setVisited(int visited) {
+		this.visited = visited;
+	}
+}
+=====================================================================
+Found a 16 line (47 tokens) duplication in the following files: 
+Starting at line 73 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\controller\AjaxController2.java
+Starting at line 130 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\controller\AjaxController2.java
+
+	public String ajax8(UserDTO user, Model model) {
+		//UserDTO dto = service.userIdCheck(id);
+		//dtoÍ∞? null ?ù¥ ?ïÑ?ãàÎ©?, ?Ç¨?ö©?ù¥ Î∂àÍ??ä•?ïú ?ïÑ?ù¥?îî, null?ù¥Î©? ?Ç¨?ö©?ù¥ Í∞??ä•?ïú ?ïÑ?ù¥?îî
+		String msg = "";
+		if(user.getId().equals("admin")) {
+			msg = "no";
+		} else {
+			msg = "ok";
+		}
+		model.addAttribute("msg", msg);
+		return msg;
+	}
+	
+	
+	//get Î∞©Ïãù?ùò idÎß? Î∞õÏïÑ Ï≤òÎ¶¨?êò?äî Í≤ΩÏö∞?ùò ?ïÑ?ù¥?îî Ï§ëÎ≥µ Ï≤¥ÌÅ¨
+	@ResponseBody 
+=====================================================================
+Found a 14 line (47 tokens) duplication in the following files: 
+Starting at line 90 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\controller\AjaxController2.java
+Starting at line 111 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\controller\AjaxController2.java
+
+	public String ajax9(String id, Model model) {
+		//UserDTO dto = service.userIdCheck(id);
+		//dtoÍ∞? null ?ù¥ ?ïÑ?ãàÎ©?, ?Ç¨?ö©?ù¥ Î∂àÍ??ä•?ïú ?ïÑ?ù¥?îî, null?ù¥Î©? ?Ç¨?ö©?ù¥ Í∞??ä•?ïú ?ïÑ?ù¥?îî
+		String msg = "";
+		if(id.equals("admin")) {
+			msg = "no";
+		} else {
+			msg = "ok";
+		}
+		model.addAttribute("msg", msg);
+		return msg;
+	}
+	
+	@GetMapping(value="ajaxForm10.do")
+=====================================================================
+Found a 7 line (47 tokens) duplication in the following files: 
+Starting at line 5 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dao\MemberDAO.java
+Starting at line 5 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\service\MemberService.java
+
+public interface MemberDAO {
+	public void joinMember(MemberDTO member) throws Exception;
+	public MemberDTO loginMember(MemberDTO member) throws Exception;
+	public void deleteMember(MemberDTO member) throws Exception;
+	public int checkExistMember(String id) throws Exception;
+	public void updateMember(MemberDTO member) throws Exception;
+}
+=====================================================================
+Found a 6 line (38 tokens) duplication in the following files: 
+Starting at line 29 of D:\kim3\jsp3\web05\src\test\java\com\kktshop\myshop\ControllerTest1.java
+Starting at line 30 of D:\kim3\jsp3\web05\src\test\java\com\kktshop\myshop\DAOTest1.java
+Starting at line 28 of D:\kim3\jsp3\web05\src\test\java\com\kktshop\myshop\ServiceTest1.java
+
+			System.out.println("Ïª®Ìä∏Î°§Îü¨ ?ã®?úÑ ?Öå?ä§?ä∏ Ï≤òÎ¶¨Í∞? ?Ñ±Í≥µÏ†Å?úºÎ°? Ï≤òÎ¶¨?êò?óà?ùå");
+			System.out.println("?öå?õê?àò : "+cnt);
+			Assert.assertEquals(cnt, 5);
+			Assert.assertNull(cnt);
+		} catch(Exception e) {
+			System.out.println("Ïª®Ìä∏Î°§Îü¨ ?ã®?úÑ ?Öå?ä§?ä∏Í∞? ?ã§?å® ?êò?óà?ùå");
+=====================================================================
+Found a 10 line (33 tokens) duplication in the following files: 
+Starting at line 94 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\controller\AjaxController2.java
+Starting at line 113 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\controller\AjaxController2.java
+Starting at line 134 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\controller\AjaxController2.java
+
+		if(id.equals("admin")) {
+			msg = "no";
+		} else {
+			msg = "ok";
+		}
+		model.addAttribute("msg", msg);
+		return msg;
+	}
+	
+	@GetMapping(value="ajaxForm10.do")
+=====================================================================
+Found a 5 line (32 tokens) duplication in the following files: 
+Starting at line 36 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\controller\MemberController.java
+Starting at line 108 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\controller\MemberController.java
+
+	public String join_member(MemberDTO member) throws Exception {
+    	String reqpass = member.getPwd();
+    	String pwd = passEncoder.encode(reqpass);
+    	member.setPwd(pwd);
+		memberService.joinMember(member);
+=====================================================================
+Found a 12 line (32 tokens) duplication in the following files: 
+Starting at line 7 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dao\LatestDAO.java
+Starting at line 7 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\service\LatestService.java
+
+public interface LatestDAO {
+	/* ÏµúÏã† ?ÉÅ?íà */
+	public List<GoodsDTO> latestGoods() throws Exception;
+	
+	/* Î≤†Ïä§?ä∏ ?ÉÅ?íà */
+	public List<GoodsDTO> bestGoods() throws Exception;
+	
+	/* Ï∂îÏ≤ú ?ÉÅ?íà */
+	public List<GoodsDTO> chuGoods() throws Exception;
+	
+	/* ÏµúÏã† Í≤åÏãúÍ∏? */
+}
+=====================================================================
+Found a 12 line (29 tokens) duplication in the following files: 
+Starting at line 77 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\controller\AjaxController2.java
+Starting at line 94 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\controller\AjaxController2.java
+Starting at line 113 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\controller\AjaxController2.java
+
+		if(user.getId().equals("admin")) {
+			msg = "no";
+		} else {
+			msg = "ok";
+		}
+		model.addAttribute("msg", msg);
+		return msg;
+	}
+	
+	
+	//get Î∞©Ïãù?ùò idÎß? Î∞õÏïÑ Ï≤òÎ¶¨?êò?äî Í≤ΩÏö∞?ùò ?ïÑ?ù¥?îî Ï§ëÎ≥µ Ï≤¥ÌÅ¨
+	@ResponseBody 
+=====================================================================
+Found a 6 line (29 tokens) duplication in the following files: 
+Starting at line 23 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\controller\GoodsController.java
+Starting at line 38 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\controller\NoticeController.java
+Starting at line 23 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\controller\QnaController.java
+
+	@Autowired
+	HttpSession session;
+	
+	@RequestMapping(value="list.do", method = RequestMethod.GET)
+    public String noticeList(Model model) throws Exception {
+		List<GoodsDTO> goodsList = goodsService.goodsList();
+=====================================================================
+Found a 5 line (27 tokens) duplication in the following files: 
+Starting at line 24 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\controller\CartController.java
+Starting at line 23 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\controller\GoodsController.java
+Starting at line 38 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\controller\NoticeController.java
+Starting at line 23 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\controller\QnaController.java
+Starting at line 24 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\controller\SalesController.java
+
+	@Autowired
+	HttpSession session;
+	
+	@RequestMapping(value="list.do", method = RequestMethod.GET)
+    public String noticeList(Model model) throws Exception {
+=====================================================================
+Found a 4 line (26 tokens) duplication in the following files: 
+Starting at line 30 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\controller\AjaxController3.java
+Starting at line 39 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\controller\AjaxController3.java
+
+	public JSONObject ajax14() {   //JSONObject ?ôú?ö©
+		JSONObject ob = new JSONObject();
+		ob.put("id", "kim");
+		ob.put("name", "Íπ?");
+=====================================================================
+Found a 8 line (26 tokens) duplication in the following files: 
+Starting at line 22 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\CartDTO.java
+Starting at line 29 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\CartDetailDTO.java
+Starting at line 16 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\ReviewDTO.java
+
+	}
+	public int getGno() {
+		return gno;
+	}
+	public void setGno(int gno) {
+		this.gno = gno;
+	}
+	public String getGcolor() {
+=====================================================================
+Found a 8 line (26 tokens) duplication in the following files: 
+Starting at line 34 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\CartDTO.java
+Starting at line 41 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\CartDetailDTO.java
+Starting at line 57 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\SalesDTO.java
+
+	}
+	public int getAmount() {
+		return amount;
+	}
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+	public String getGsize() {
+=====================================================================
+Found a 8 line (26 tokens) duplication in the following files: 
+Starting at line 57 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\MemberDTO.java
+Starting at line 33 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\NoticeDTO.java
+Starting at line 40 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\ReviewDTO.java
+
+	}
+	public String getRegdate() {
+		return regdate;
+	}
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
+	}
+	public int getGrade() {
+=====================================================================
+Found a 8 line (26 tokens) duplication in the following files: 
+Starting at line 21 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\NoticeDTO.java
+Starting at line 34 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\ReviewDTO.java
+
+	}
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
+	public String getNickname() {
+=====================================================================
+Found a 8 line (26 tokens) duplication in the following files: 
+Starting at line 22 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\ReviewDTO.java
+Starting at line 63 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\SalesDTO.java
+
+	}
+	public String getUserid() {
+		return userid;
+	}
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
+	public String getSubject() {
+=====================================================================
+Found a 8 line (25 tokens) duplication in the following files: 
+Starting at line 16 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\CartDTO.java
+Starting at line 23 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\CartDetailDTO.java
+Starting at line 22 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\ReviewDTO.java
+Starting at line 63 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\SalesDTO.java
+
+	}
+	public String getUserid() {
+		return userid;
+	}
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
+	public int getGno() {
+=====================================================================
+Found a 8 line (25 tokens) duplication in the following files: 
+Starting at line 22 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\CartDTO.java
+Starting at line 29 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\CartDetailDTO.java
+Starting at line 16 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\ReviewDTO.java
+Starting at line 51 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\SalesDTO.java
+
+	}
+	public int getGno() {
+		return gno;
+	}
+	public void setGno(int gno) {
+		this.gno = gno;
+	}
+	public String getGcolor() {
+=====================================================================
+Found a 8 line (25 tokens) duplication in the following files: 
+Starting at line 65 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\CartDetailDTO.java
+Starting at line 17 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\GoodsDTO.java
+
+	}
+	public String getGname() {
+		return gname;
+	}
+	public void setGname(String gname) {
+		this.gname = gname;
+	}
+	public int getGprice() {
+=====================================================================
+Found a 8 line (25 tokens) duplication in the following files: 
+Starting at line 71 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\CartDetailDTO.java
+Starting at line 29 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\GoodsDTO.java
+
+	}
+	public int getGprice() {
+		return gprice;
+	}
+	public void setGprice(int gprice) {
+		this.gprice = gprice;
+	}
+	public String getGcontent() {
+=====================================================================
+Found a 8 line (25 tokens) duplication in the following files: 
+Starting at line 95 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\CartDetailDTO.java
+Starting at line 53 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\GoodsDTO.java
+
+	}
+	public String getRegdate() {
+		return regdate;
+	}
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
+	}
+}
+=====================================================================
+Found a 8 line (25 tokens) duplication in the following files: 
+Starting at line 12 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\CategoryDTO.java
+Starting at line 23 of D:\kim3\jsp3\web05\src\main\java\com\kktshop\dto\GoodsDTO.java
+
+	}
+	public String getCcode() {
+		return ccode;
+	}
+	public void setCcode(String ccode) {
+		this.ccode = ccode;
+	}
+	public String getCcoderef() {

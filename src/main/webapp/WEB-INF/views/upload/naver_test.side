@@ -1,0 +1,136 @@
+{
+  "id": "89d9d0e6-9d05-43c4-899a-34c817556463",
+  "version": "2.0",
+  "name": "naver_test",
+  "url": "https://www.naver.com",
+  "tests": [{
+    "id": "7a1e23d1-d3bf-4fb8-9fc1-e24a5667a9c7",
+    "name": "naver_test1",
+    "commands": [{
+      "id": "a26b80c5-c05f-4ad3-a36e-c59d5a5c67a3",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9acca782-8e78-4230-91ff-b83204d1b906",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1323x770",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2264a1d6-3420-4e26-b53c-c4a9463cc63a",
+      "comment": "",
+      "command": "selectFrame",
+      "target": "index=0",
+      "targets": [
+        ["index=0"]
+      ],
+      "value": ""
+    }, {
+      "id": "b8083c44-1169-481a-b068-ce16153ee18e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=메일6441",
+      "targets": [
+        ["linkText=메일6441", "linkText"],
+        ["css=.link_new:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(@href, 'https://mail.naver.com')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'메일6441')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "80baae13-300a-4b32-8205-d8b3a65dcb35",
+      "comment": "",
+      "command": "selectFrame",
+      "target": "relative=parent",
+      "targets": [
+        ["relative=parent"]
+      ],
+      "value": ""
+    }, {
+      "id": "f5b95b6f-e9df-4855-bcb9-44f6307c739e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.\\_c1\\(mrCore\\|clickTitle\\|98099\\):nth-child(2)",
+      "targets": [
+        ["css=.\\_c1\\(mrCore\\|clickTitle\\|98099\\):nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='list_for_view']/ol/li[3]/div/div[2]/a/span/strong", "xpath:idRelative"],
+        ["xpath=//li[3]/div/div[2]/a/span/strong", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ef825917-7ed6-4a60-9f30-f54813c9ad27",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "id=previewContent",
+      "targets": [
+        ["id=previewContent", "id"],
+        ["css=#previewContent", "css:finder"],
+        ["xpath=//div[@id='previewContent']", "xpath:attributes"],
+        ["xpath=//div[@id='cont_flex_area']/div[4]/div[3]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[4]/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "68f95faa-eb98-4e66-82ac-731df5f3a1b0",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "id=previewContent",
+      "targets": [
+        ["id=previewContent", "id"],
+        ["css=#previewContent", "css:finder"],
+        ["xpath=//div[@id='previewContent']", "xpath:attributes"],
+        ["xpath=//div[@id='cont_flex_area']/div[4]/div[3]", "xpath:idRelative"],
+        ["xpath=//div[4]/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b451d196-2154-4c00-83c4-b41b5662691d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=받은메일함",
+      "targets": [
+        ["linkText=받은메일함", "linkText"],
+        ["css=.bu2 > .\\_d6\\(mcDragndrop\\|html5DragOver\\)", "css:finder"],
+        ["xpath=//a[contains(text(),'받은메일함')]", "xpath:link"],
+        ["xpath=//li[@id='0_fol']/span/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[21]", "xpath:href"],
+        ["xpath=//li[2]/span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'받은메일함')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8c736d2c-b794-4fdf-869c-4dd0626140fb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.\\_m2\\(mrCore\\|middleClickTitle\\|98101\\):nth-child(2)",
+      "targets": [
+        ["css=.\\_m2\\(mrCore\\|middleClickTitle\\|98101\\):nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='list_for_view']/ol/li[2]/div/div[2]/a/span/strong", "xpath:idRelative"],
+        ["xpath=//li[2]/div/div[2]/a/span/strong", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eb67edf1-bd90-421d-bf51-91ae2c242e47",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "ebbe2f48-bb99-4a61-bd58-572f8ab9d6dc",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["7a1e23d1-d3bf-4fb8-9fc1-e24a5667a9c7"]
+  }],
+  "urls": ["https://www.naver.com/"],
+  "plugins": []
+}

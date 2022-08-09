@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cart">
+	<select id="cartList" resultType="com.kktshop.dto.CartDTO">
+	select * from cart where userid=#{userid}
+	</select>
+	
+	<select id="cartRead" resultType="com.kktshop.dto.CartDTO">
+	select * from cart where bno=#{bno} and userid=#{userid}
+	</select>
+	
+	<select id="cartCount" resultType="integer">
+	select count(*) from cart where userid=#{userid}
+	</select>
+	
+	<insert id="addCart">
+	insert into cart(userid, gno, gcolor, amount, gsize) value (#{userid}, #{gno}, #{gcolor}, #{amount}, #{gsize})
+	</insert>
+	
+	<delete id="deleteCart">
+	delete from cart where bno=#{bno}
+	</delete>	
+	
+	<update id="updateCart">
+	update cart set gno=#{gno}, gcolor=#{gcolor}, amount=#{amount}, gsize=#{gsize}, bdate=(current_date) where bno=#{bno}	
+	</update>
+	
+</mapper>

@@ -1,0 +1,21 @@
+{
+  "id": "28505cda-446f-422f-b492-e6ea4e83624c",
+  "version": "2.0",
+  "name": "web04_김기태",
+  "url": "",
+  "tests": [{
+    "id": "4ab64267-9265-4f09-ad70-ca9eb9c4c193",
+    "name": "web04_김기태01",
+    "commands": []
+  }],
+  "suites": [{
+    "id": "a2a1ac75-685f-4782-8eed-98c99ffd8d75",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["4ab64267-9265-4f09-ad70-ca9eb9c4c193"]
+  }],
+  "urls": [],
+  "plugins": []
+}

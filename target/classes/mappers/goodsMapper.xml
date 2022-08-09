@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="goods">
+	<select id="goodsList" resultType="com.kktshop.dto.GoodsDTO">
+		select * from goods order by regdate desc
+	</select>
+
+	<select id="proList" resultType="com.kktshop.dto.GoodsDTO">
+		select * from goods where ccode like concat('%',#{ccode},'%') order by regdate desc
+	</select>
+	
+	<select id="proCount" resultType="integer">
+		select count(*) from goods where ccode like concat('%',#{ccode},'%')
+	</select>
+	
+	<select id="navnameLoading" resultType="string">
+		select navname from navbar where navparam = #{navparam}
+	</select>
+	
+	<select id="getGoods" resultType="com.kktshop.dto.GoodsDTO">
+		select * from goods where gnum=#{gnum}
+	</select>
+	
+	<select id="latestGoods" resultType="com.kktshop.dto.GoodsDTO">
+		select * from goods order by regdate desc limit 5
+	</select>
+	
+	<select id="bestGoods" resultType="com.kktshop.dto.GoodsDTO">
+		<!-- 판매 테이블에서 팔린 개수가 많은 5개 상품을 상품 테이블에 찾아 출력 --> 
+	</select>
+	
+	<select id="chuGoods" resultType="com.kktshop.dto.GoodsDTO">
+		<!-- 관리자가 추천 상품을 등록하여 그 정보와 일치하는 상품을 상품테이블에 찾아 출력 --> 
+	</select>
+	
+	<select id="goodsCount" resultType="integer">
+		select count(*) from goods
+	</select>
+	
+	<insert id="addGoods">
+	insert into goods(gname, ccode, gprice, gstock, gdes, gimg) values (#{gname}, #{ccode}, #{gprice}, #{gstock}, #{gdes}, #{gimg})
+	</insert>
+	
+	<delete id="deleteGoods">
+		delete from goods where gnum=#{gnum}
+	</delete>	
+	
+	<update id="updateGoods">
+		update goods set gname=#{gname}, ccode=#{ccode}, gprice=#{gprice}, gstock=#{gstock}, gdes=#{gdes}, gimg=#{gimg}, regdate=(current_date) from gnum=#{gnum}
+	</update>
+	
+	<insert id="addCategory">
+		insert into category values (#{cname}, #{ccode}, #{ccoderef})
+	</insert>
+</mapper>

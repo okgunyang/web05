@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="databank">
+
+	<insert id="databankInsert">
+	insert into databank(title, fileurl, author) value (#{title}, #{fileurl}, #{author})
+	</insert>
+
+	<select id="databankList" resultType="com.kktshop.dto.DatabankDTO">
+	select * from databank
+	</select>	
+</mapper>
